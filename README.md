@@ -9,4 +9,4 @@
 Note- for hiding the input, go to 'Modify Run Configuration...' of the program, then under 'Execution' section, enable 'Emulate terminal in output console'. (in PyCharm)
 
 
-3) TicTacToe.py
+3) TicTacToe.py (two players version)
