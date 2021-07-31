@@ -1,41 +1,36 @@
-# Game! ->
+# Prediction Trick
 
-run = ''
-while run != 'n':
-    print(f'''\nHello! We have a guessing game for you, rules are as follows!->\n
-    As you can see there is a (3x3) table below (9 elements), out of those we will start with element on first row third column,
-    now as I will give you a number, you have to move those number of times within the table horizontally or vertically but not diagonally! Okay?
-    (Note that repeating a block is allowed while moving.)\n
-        ----------------
-        |    |    |here|
-        |--------------|
-        |    |    |    |
-        |--------------|
-        |    |    |    |
-        ----------------\n''')
 
-    if input("Press k to proceed: ").lower() == 'k':
+def get_bool(num: int): return 'NO ' if (num in positions) else 'YES'
 
-        dict1 = {1: 1, 2: 7, 3: 3, 4: 7, 5: 5, 6: 9, 7: 3, 8: 1}
-        list1 = []
 
-        for i in dict1:
-            list1.append(i)
-            print(f"\nNow Move {dict1[i]} time(s)")
-            input("(Press enter to proceed)")
+print(f'''\nHello! We have a guessing game for you, rules are as follows! -> \n
+As you can see there is a (3x3) grid below (9 boxes), out of those we will start with the box on first row third column,
+now as I will give you a number, you have to move those number of times within the table horizontally or vertically but not diagonally! Okay?
+(Note that repeating a block is allowed while moving.) \n
+    -------------------
+    |     |     |here |
+    |-----------------|
+    |     |     |     |
+    |-----------------|
+    |     |     |     |
+    -------------------
+\nPress enter to start: ''')
+input()
 
-            print(
-                f'''\n'False' are the blocks currently you are NOT on ;) (Note that you can't go on or move through a False block.)\n
-        ------------------
-        |{3 not in list1}|{4 not in list1}|{1 not in list1}|
-        |-----------------|
-        |{2 not in list1}|{7 not in list1}|{6 not in list1}|
-        |-----------------|
-        |{5 not in list1}|{8 not in list1}|{9 not in list1} |
-        ------------------''')
+positions = []
+for pos, moves in ((1, 1), (2, 7), (3, 3), (4, 7), (5, 5), (6, 9), (7, 3), (8, 1)):
+    positions.append(pos)
+    print(f"Now move", moves, "time" if (moves == 1) else "times", "(press enter when done)")
+    input()
 
-        print("\nYou are on the 'True' block! ;)\n")
+    print(f''''NO' are the blocks currently you are NOT on ;) (Note that you can't move on or through a 'NO' block.) \n
+    -------------------
+    | {get_bool(3)} | {get_bool(4)} | {get_bool(1)} |
+    |-----------------|
+    | {get_bool(2)} | {get_bool(7)} | {get_bool(6)} |
+    |-----------------|
+    | {get_bool(5)} | {get_bool(8)} | {get_bool(9)} |
+    ------------------- \n''')
 
-    run = input("\nTry again? (press enter to continue/ 'n' to exit): ").lower()
-
-print("\nThanks for playing! :)")
+print("You are on the 'YES' block! How was it? ;) \n\nThanks for Playing!")
