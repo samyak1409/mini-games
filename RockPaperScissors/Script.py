@@ -19,10 +19,10 @@ def rps(p1, p2):
 
 print("""\nWelcome to Rock/Paper/Scissors! \n
 {NOTE that as we know rock paper scissors is a hand game usually played between two people, 
-in which each player SIMULTANEOUSLY forms one of the three shapes with an outstretched hand. 
+in which each player simultaneously forms one of the three shapes with an outstretched hand. 
 But, the limitation here in this program is it can't take two inputs SIMULTANEOUSLY!! 
-So, either to overcome this limitation, player1 have to hide the keyboard from player2 while entering his/her choice! 
-or just close the program and play in the real world! :D } \n
+So, either to overcome this limitation, player1 have to hide the keyboard from player2 
+while entering his/her choice or just close the program and play in the real world! :D } \n
 (type r for Rock, p for Paper or s for Scissors)""")
 
 while True:
